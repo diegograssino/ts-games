@@ -1,10 +1,8 @@
 import React from "react";
+
+import Main from "./pages/Main/Main";
 function App(): JSX.Element {
-  return (
-    <div>
-      <h2>Vite?</h2>
-    </div>
-  );
+  return <Main />;
 }
 
 export default App;
