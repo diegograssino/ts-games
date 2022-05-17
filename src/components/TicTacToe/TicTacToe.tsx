@@ -4,10 +4,23 @@ import {Styled} from "./TicTacToe.styled";
 
 function TicTacToe(): JSX.Element {
   const INITIAL_TURN = "X";
-  const [turn, setTurn] = useState<"X" | "O">(INITIAL_TURN);
+  const INITIAL_PLAYS: string[] = Array(9).fill("");
 
-  function handleClick() {
-    setTurn(turn === "X" ? "O" : "X");
+  const [turn, setTurn] = useState<"X" | "O">(INITIAL_TURN);
+  const [plays, setPlays] = useState<string[]>(INITIAL_PLAYS);
+
+  function handleClick(i: number): void {
+    if (plays[i] === "") {
+      const playsCopy = [...plays];
+
+      playsCopy[i] = turn;
+      setPlays(playsCopy);
+      setTurn(turn === "X" ? "O" : "X");
+    }
+  }
+  function handleReset(): void {
+    setPlays(INITIAL_PLAYS);
+    setTurn(INITIAL_TURN);
   }
 
   return (
@@ -16,20 +29,15 @@ function TicTacToe(): JSX.Element {
         <h2 className="game-title">Tic-Tac-Toe</h2>
         <p>Turn: {turn}</p>
         <div className="grid3x3">
-          <div className="square" onClick={handleClick}>
-            X
-          </div>
-          <div className="square" onClick={handleClick}>
-            O
-          </div>
-          <div className="square" onClick={handleClick} />
-          <div className="square" onClick={handleClick} />
-          <div className="square" onClick={handleClick} />
-          <div className="square" onClick={handleClick} />
-          <div className="square" onClick={handleClick} />
-          <div className="square" onClick={handleClick} />
-          <div className="square" onClick={handleClick} />
+          {plays.map((play, index) => (
+            <div key="index" className="square" onClick={() => handleClick(index)}>
+              {play}
+            </div>
+          ))}
         </div>
+      </div>
+      <div className="btn-reset" onClick={handleReset}>
+        Reset
       </div>
     </Styled>
   );

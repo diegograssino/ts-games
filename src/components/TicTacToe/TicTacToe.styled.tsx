@@ -25,8 +25,26 @@ export const Styled = styled.div`
     justify-content: center;
     font-size: 75px;
     font-weight: bold;
+    cursor: pointer;
   }
   .game-title {
-    margin: 20px 0px 0px 5px;
+    margin: 20px 0px 0px 0px;
+  }
+  .btn-reset {
+    margin: 10px 0px 0px 10px;
+    background-color: aqua;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: lightblue;
+    }
+    &:active {
+      background-color: aqua;
+      color: gray;
+    }
   }
 `;
