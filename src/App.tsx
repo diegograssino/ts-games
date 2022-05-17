@@ -1,8 +1,22 @@
 import React from "react";
+import {createGlobalStyle} from "styled-components";
 
-import Main from "./pages/Main/Main";
+import Home from "./pages/Home/Home";
 function App(): JSX.Element {
-  return <Main />;
+  const GlobalStyle = createGlobalStyle`
+	*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		font-family: 'Poppins', sans-serif;
+	}`;
+
+  return (
+    <div>
+      <GlobalStyle />
+      <Home />
+    </div>
+  );
 }
 
 export default App;
