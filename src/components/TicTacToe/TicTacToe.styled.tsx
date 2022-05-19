@@ -13,7 +13,7 @@ export const Styled = styled.div`
   }
 
   .square {
-    background-color: gray;
+    background-color: #f8cb2e;
     color: white;
     border: 1px solid black;
     border-radius: 5px;
@@ -32,18 +32,18 @@ export const Styled = styled.div`
   }
   .btn-reset {
     margin: 10px 0px 0px 10px;
-    background-color: aqua;
-    border: 1px solid black;
+    background-color: #b22727;
+    color: white;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     display: inline-block;
     transition: background-color 0.25s ease;
     cursor: pointer;
     &:hover {
-      background-color: lightblue;
+      background-color: #ee5007;
     }
     &:active {
-      background-color: aqua;
+      background-color: #b22727;
       color: gray;
     }
   }
