@@ -7,7 +7,7 @@ function Home(): JSX.Element {
   return (
     <Styled>
       <header>
-        <h1>GAMES IN TYPESCRIPT</h1>
+        <h1>TYPE-SCRIPT-TOE</h1>
       </header>
       <main>
         <section>

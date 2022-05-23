@@ -7,5 +7,11 @@ export const Styled = styled.div`
     color: white;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  article {
+    display: flex;
+    justify-content: center;
   }
 `;
